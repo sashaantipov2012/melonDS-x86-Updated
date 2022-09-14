@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: msys2/setup-msys2@v2
       with:
-          msystem: MINGW64
+          msystem: MINGW32
           update: true
 
     - name: Install dependencies
@@ -37,5 +37,5 @@ jobs:
 
     - uses: actions/upload-artifact@v1
       with:
-        name: melonDS-windows-x86
+        name: melonDS-windows-i686
         path: ${{runner.workspace}}\build\melonDS.exe
