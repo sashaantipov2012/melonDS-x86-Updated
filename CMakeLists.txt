@@ -84,6 +84,7 @@ endif()
 
 if (WIN32)
     option(BUILD_STATIC "Statically link dependencies" OFF)
+    add_link_options(--allow-multiple-definition)
 endif()
 
 if (BUILD_STATIC AND WIN32)
