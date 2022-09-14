@@ -1,14 +1,7 @@
 name: CMake Build (Windows x86 (686))
 
-on:
-  [workflow_dispatch]
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-
+on: [workflow_dispatch]
+  
 env:
   BUILD_TYPE: Release
 
