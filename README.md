@@ -5,7 +5,10 @@
 <a href="http://melonds.kuribo64.net/downloads.php" alt="Release: 0.9.4"><img src="https://img.shields.io/badge/release-0.9.4-%235c913b.svg"></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPLv3"><img src="https://img.shields.io/badge/License-GPL%20v3-%23ff554d.svg"></a>
 <a href="https://kiwiirc.com/client/irc.badnik.net/?nick=IRC-Source_?#melonds" alt="IRC channel: #melonds"><img src="https://img.shields.io/badge/IRC%20chat-%23melonds-%23dd2e44.svg"></a>
-[![CMake Build (Windows x86 (686))](https://github.com/MyTDT-Mysoft/melonDS-x86/actions/workflows/build-windows.yml/badge.svg)](https://github.com/MyTDT-Mysoft/melonDS-x86/actions/workflows/build-windows.yml)</p>
+</p>
+
+[![CMake Build (Windows x86 (686))](https://github.com/MyTDT-Mysoft/melonDS-x86/actions/workflows/build-windows.yml/badge.svg)](https://github.com/MyTDT-Mysoft/melonDS-x86/actions/workflows/build-windows.yml)
+
 DS emulator, sorta (fork exclusvely compiled for x86 32bit)
 
 The goal is to do things right and fast, akin to blargSNES (but hopefully better). But also to, you know, have a fun challenge :)
