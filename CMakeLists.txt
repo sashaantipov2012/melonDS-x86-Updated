@@ -75,16 +75,15 @@ endif()
 
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Og")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og")
-set(CMAKE_C_FLAGS_RELEASE "-O3 -Wl,--allow-multiple-definition")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wl,--allow-multiple-definition")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -fcommon")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -fcommon")
 
 if (NOT APPLE)
     set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -s")
 endif()
 
 if (WIN32)
-    option(BUILD_STATIC "Statically link dependencies" OFF)
-    add_link_options(--allow-multiple-definition)
+    option(BUILD_STATIC "Statically link dependencies" OFF)    
 endif()
 
 if (BUILD_STATIC AND WIN32)
