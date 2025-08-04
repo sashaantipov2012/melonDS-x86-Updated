@@ -45,15 +45,20 @@ jobs:
       run: mkdir build
 
     - name: Configure
-      run: cmake --preset=release-mingw-x86_64 \
-        -DMELONDS_EMBED_BUILD_INFO=ON \
-        -DUSE_VCPKG=OFF \
-        -DBUILD_STATIC=OFF \
-        -DBUILD_QT_SDL=OFF \
+      working-directory: ${{ runner.workspace }}/build
+      run: >
+        cmake ../../melonDS-x86-Updated
+        -G "MinGW Makefiles"
+        -DCMAKE_BUILD_TYPE=Release
+        -DMELONDS_EMBED_BUILD_INFO=ON
+        -DUSE_VCPKG=OFF
+        -DBUILD_STATIC=OFF
+        -DBUILD_QT_SDL=OFF
         -DENABLE_OGLRENDERER=OFF
 
     - name: Build
-      run: cmake --build --preset=release-mingw-x86_64
+      working-directory: ${{ runner.workspace }}/build
+      run: cmake --build . --config Release
 
     - uses: actions/upload-artifact@v4
       with:
