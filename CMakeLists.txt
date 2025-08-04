@@ -79,12 +79,17 @@ if (ENABLE_LTO)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 endif()
 
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Og")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og")
+set(CMAKE_C_FLAGS_RELEASE "-Ofast -march=westmere")
+set(CMAKE_CXX_FLAGS_RELEASE "-Ofast -march=westmere")
+
 if (NOT APPLE)
-    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -s")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -s -Wl,--allow-multiple-definition")
 endif()
 
 if (WIN32)
-    option(BUILD_STATIC "Statically link dependencies" OFF)
+    option(BUILD_STATIC "Statically link dependencies" OFF)    
 endif()
 
 if (BUILD_STATIC AND WIN32)
