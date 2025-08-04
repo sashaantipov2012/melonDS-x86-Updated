@@ -56,6 +56,7 @@ jobs:
         -DBUILD_QT_SDL=OFF
         -DENABLE_OGLRENDERER=OFF
 
+
     - name: Build
       working-directory: ${{ runner.workspace }}/build
       run: cmake --build . --config Release
