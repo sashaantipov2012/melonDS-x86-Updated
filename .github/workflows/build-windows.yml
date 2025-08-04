@@ -43,11 +43,11 @@ jobs:
     - name: Create build environment
       working-directory: ${{ runner.workspace }}
       run: mkdir build
-
+      
     - name: Configure
       working-directory: ${{ runner.workspace }}/build
       run: >
-        cmake ../../melonDS-x86-Updated
+        cmake ${{ github.workspace }}
         -G "MinGW Makefiles"
         -DCMAKE_BUILD_TYPE=Release
         -DMELONDS_EMBED_BUILD_INFO=ON
